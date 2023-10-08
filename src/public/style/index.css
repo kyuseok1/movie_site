@@ -1,0 +1,682 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: omyu;
+  src: url("../font/오뮤_다예쁨체.ttf");
+}
+
+body {
+  font-family: omyu;
+}
+
+button {
+  font-family: omyu;
+}
+
+.clearFix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container {
+  margin: auto;
+}
+
+
+
+.top>ul>li {
+  width: 14%;
+}
+
+body {
+  background-color: #f2ebe6;
+}
+
+.head {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+  border-bottom: 1px solid black;
+}
+
+.header-top {
+  width: 100%;
+  background-color: #fff;
+  height: 30px;
+  position: fixed;
+  color: black;
+  z-index: 10;
+  text-align: right;
+  padding-top: 5px;
+
+}
+
+.header-top2 {
+  width: 1184px;
+  margin: auto;
+}
+
+.header-top2 a {
+  padding-right: 10px;
+}
+
+.header-top hr {
+  background-color: rgb(223, 222, 222);
+  height: 1px;
+  border: 0;
+}
+
+.hidden_head2 {
+  height: 120px;
+  width: 1184px;
+}
+
+
+.top {
+  height: 100%;
+  width: 1184px;
+  padding: 40px 20px 0px;
+  position: relative;
+
+}
+
+.head.active {
+  height: 400px;
+}
+
+.subtopmenu {
+  padding-top: 50px;
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  position: absolute;
+  right: 3px;
+}
+
+.subtopmenu li {
+  font-size: 19px;
+  padding-top: 6px;
+}
+
+.top>ul {
+  display: flex;
+
+}
+
+.top>ul>li {
+  position: relative;
+}
+
+.top>ul ul li:hover,
+.top>ul ul li:focus {
+  background: rgb(14, 223, 143);
+
+}
+
+.top:hover .subtopmenu {
+  display: inline;
+  z-index: 4;
+  background-color: white;
+  top: 20px;
+}
+
+.topmenu {
+  top: 10px;
+}
+
+.top button {
+  font-size: 19px;
+  border-radius: 25px;
+  width: 150px;
+  height: 40px;
+  color: white;
+}
+
+
+.button1 {
+  background-color: #683a2f;
+  border: none
+}
+
+.button2 {
+  background-color: red;
+  border: none
+}
+
+
+.top>ul>li {
+  float: left;
+  font-weight: bold;
+  position: relative;
+  font-size: 1.375rem;
+}
+
+
+.swiper-container {
+  width: 1440px;
+  height: 480px;
+  margin: auto;
+}
+
+SwiperSlide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.sec {
+  display: none;
+}
+
+
+
+
+.youtube1 {
+  width: 1440px;
+  height: 605px;
+  margin: auto;
+}
+
+.youtube2 {
+  width: 100%;
+  height: 605px;
+  text-align: center;
+}
+
+.center {
+  max-width: 1440px;
+  padding-left: 148px;
+  padding-right: 148px;
+  height: 160px;
+  background-color: #683a2f;
+  color: white;
+  font-weight: bold;
+}
+
+.center>ul>li {
+  position: relative;
+  float: left;
+  width: 33%;
+  padding: 10px 0 0;
+  top: 20px;
+}
+
+.center>ul>li>p {
+  position: relative;
+  left: 100px;
+  bottom: 90px;
+  font-size: 1.25rem;
+}
+
+.center button {
+  position: relative;
+  left: 100px;
+  bottom: 80px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid white;
+  width: 110px;
+  height: 30px;
+}
+
+.youtube {
+  width: 300px;
+  height: 160px;
+}
+
+.facebook {
+  width: 300px;
+  height: 160px;
+}
+
+.instagram {
+  width: 300px;
+  height: 160px;
+}
+
+.center2 {
+  width: 1440px;
+  height: 400px;
+}
+
+.left_content {
+  background-color: bisque;
+  background-image: url(../../../public/images/버거킹앱.png);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+.right_content {
+  background-color: rgb(255, 200, 161);
+  background-image: url(../../../public/images/딜리버리이용방법.png);
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  float: right;
+  background-repeat: no-repeat;
+}
+
+.center3 {
+  width: 1440px;
+  height: 600px;
+  background-color: white;
+  padding: 100px 148px 88px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.logo2 {
+  display: none;
+}
+
+.center3.img {
+  text-align: center;
+}
+
+.center3>p {
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  font-size: 1.125rem;
+
+}
+
+.center3 ul {
+  text-align: center;
+}
+
+.center3 li {
+  height: 180px;
+  float: left;
+  width: 16%;
+}
+
+.center3 button {
+  width: 140px;
+  height: 50px;
+  padding: 3px 10px;
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 23px;
+
+}
+
+.menuul {
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.menuul ul {
+  text-align: center;
+}
+
+.menuul strong {
+  color: red;
+}
+
+.menuul li {
+  float: left;
+  width: 16.666%;
+  padding: 100px 0 8px;
+  font-size: 1.125rem;
+  line-height: 134%;
+}
+
+.menuul li:nth-child(1) {
+
+  background: url(../../../public/images/딜리버리.PNG) no-repeat top;
+
+}
+
+.menuul li:nth-child(2) {
+  background: url(../../../public/images/킹.PNG) no-repeat top;
+  border-left: 1px solid #ededed;
+}
+
+.menuul li:nth-child(3) {
+  background: url(../../../public/images/드라이브스루.PNG) no-repeat top;
+  border-left: 1px solid #ededed;
+}
+
+.menuul li:nth-child(4) {
+  background: url(../../../public/images/24시간.PNG) no-repeat top;
+  border-left: 1px solid #ededed;
+}
+
+.menuul li:nth-child(5) {
+  background: url(../../../public/images/아침메뉴.PNG) no-repeat top;
+  border-left: 1px solid #ededed;
+}
+
+.menuul li:nth-child(6) {
+  background: url(../../../public/images/주차공간.PNG) no-repeat top;
+  border-left: 1px solid #ededed;
+}
+
+.bottom {
+
+  background-image: url(../../../public/images/하단배너.png);
+  width: 1440px;
+  height: 200px;
+}
+
+.bottom>p {
+  color: white;
+  padding-left: 100px;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.bottom span {
+  float: right;
+  padding-right: 50px;
+  font-size: 40px;
+}
+
+.bottom>h2 {
+  color: white;
+  padding-top: 50px;
+  padding-left: 100px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.bottom2 {
+  background-color: #2b0200;
+  width: 100%;
+  height: 388px;
+  padding-left: 20px;
+}
+
+.bottom2_1 {
+  position: relative;
+  width: 1144px;
+  height: 388px;
+}
+
+.bottom2_1>ul {
+  display: flex;
+}
+
+.bottom2_1 a {
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.bottom2_1>ul>li {
+  color: #bba391;
+  width: 20%;
+  padding-top: 40px;
+}
+
+.bottom2_1>ul>li>ul>li {
+  padding-top: 10px;
+}
+
+.footer {
+  background-color: #2b0200;
+  width: 100%;
+  height: 255px;
+  padding-left: 20px;
+}
+
+.footer_1 {
+  color: #bba391;
+  width: 1144px;
+  height: 255px;
+}
+
+.h2_logo {
+  width: 1144px;
+  height: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.h2_logo span {
+  float: right;
+}
+
+.h2_logo p {
+  padding-top: 20px;
+}
+
+.footer_1 span {
+  padding-right: 5px;
+}
+
+.hidden_head {
+  display: none;
+}
+
+
+
+@media screen and (max-width:1440px) {
+
+  .container,
+  .top,
+  swiper-container,
+  .youtube1,
+  .center,
+  .center2,
+  .center3,
+  .bottom {
+    width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 770px) {
+  .fir {
+    display: none;
+  }
+
+  .sec {
+    display: block;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .header-top {
+    display: none;
+  }
+
+  .head {
+    display: none;
+  }
+
+  .hidden_head {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hidden_head2 {
+    display: none;
+  }
+
+  .hidden_head button {
+    font-size: 19px;
+    border-radius: 25px;
+
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    border: none;
+    position: relative;
+    top: 10px;
+  }
+
+  .bottom2 {
+    display: none;
+  }
+
+  .head {
+    height: 60px;
+  }
+
+  .top {
+    padding: 0px;
+    height: 60px;
+  }
+
+  .toplogo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .center {
+    padding: 0;
+  }
+
+  .center3 {
+    height: 370px;
+    padding: 33px 0 25px;
+  }
+
+  .center3 h1 {
+    padding-top: 0px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  .center3 p {
+    font-size: 0.75rem;
+    padding-bottom: 10px;
+  }
+
+  .center3 button {
+    width: 130px;
+    height: 32px;
+    padding: 3px 10px;
+    font-size: 15px;
+  }
+
+  .menuul {
+    width: 100%;
+    height: 211px;
+    padding: 0px;
+  }
+
+  .menuul span {
+    display: none;
+  }
+
+  .menuul br {
+    display: none;
+  }
+
+  .menuul li:nth-child(1),
+  .menuul li:nth-child(2),
+  .menuul li:nth-child(3),
+  .menuul li:nth-child(4),
+  .menuul li:nth-child(5),
+  .menuul li:nth-child(6) {
+    background-size: auto 45px;
+    border-left: none;
+  }
+
+  .menuul li {
+    width: 33%;
+    height: 70px;
+    margin-bottom: 36px;
+    font-size: .875rem;
+    border-right: 0;
+    padding: 50px 0 0;
+    margin: 36px 0 0;
+  }
+
+  .menuul strong {
+    display: block;
+  }
+
+  .menuul img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .bottom {
+    height: 180px;
+  }
+
+  .bottom h2 {
+    padding: 20px 0 0 20px;
+    font-size: 17px;
+    position: relative;
+  }
+
+  .bottom p {
+    padding: 20px 0 0 20px;
+    font-size: 12px;
+  }
+
+  .bottom span {
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    font-size: 30px;
+  }
+
+  .bottom img {
+    width: 20px;
+    height: 20px;
+  }
+
+
+}

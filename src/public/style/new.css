@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: omyu;
+    src: url("../font/오뮤_다예쁨체.ttf");
+}
+
+body {
+    font-family: omyu;
+}
+
+button {
+    font-family: omyu;
+}
+
+.clearFix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container {
+    margin: auto;
+}
+
+.top>ul>li {
+    width: 14%;
+}
+
+.head {
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    position: fixed;
+    z-index: 3;
+    border-bottom: 1px solid black;
+}
+
+.header-top {
+    width: 100%;
+    background-color: #fff;
+    height: 30px;
+    position: fixed;
+    color: black;
+    z-index: 10;
+    text-align: right;
+    padding-top: 5px;
+
+}
+
+.header-top2 {
+    width: 1184px;
+    margin: auto;
+}
+
+.header-top2 a {
+    padding-right: 10px;
+}
+
+.header-top hr {
+    background-color: rgb(223, 222, 222);
+    height: 1px;
+    border: 0;
+}
+
+s .toplogo {
+    margin-bottom: 50px;
+}
+
+.top {
+    height: 100%;
+    width: 1184px;
+    padding: 40px 20px 0px;
+    position: relative;
+}
+
+.head.active {
+    height: 400px;
+}
+
+.subtopmenu {
+    padding-top: 50px;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-left: 5px;
+    position: absolute;
+    right: 3px;
+}
+
+.subtopmenu li {
+    font-size: 19px;
+    padding-top: 6px;
+}
+
+.top>ul {
+    display: flex;
+
+}
+
+.top>ul>li {
+    position: relative;
+}
+
+.top>ul ul li:hover,
+.top>ul ul li:focus {
+    background: rgb(14, 223, 143);
+
+}
+
+.top:hover .subtopmenu {
+    display: inline;
+    z-index: 4;
+    background-color: white;
+    top: 20px;
+}
+
+.topmenu {
+    top: 10px
+}
+
+.top button {
+    font-size: 19px;
+    border-radius: 25px;
+    width: 150px;
+    height: 40px;
+    color: white;
+}
+
+.button1 {
+    background-color: #683a2f;
+    border: none
+}
+
+.button2 {
+    background-color: red;
+    border: none
+}
+
+
+.top>ul>li {
+    float: left;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.375rem;
+}
+
+.container1 {
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 120px;
+}
+
+
+.inner {
+    padding-left: 20px;
+    width: 1100px;
+    height: 60px;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 1.2rem;
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 180px;
+}
+
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1184px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.container2 h3 {
+    padding-left: 20px;
+    font-size: 50px;
+}
+
+.container2 ul {
+    padding-top: 20px;
+}
+
+.container2>ul>li:nth-child(1),
+.container2>ul>li:nth-child(2),
+.container2>ul>li:nth-child(3),
+.container2>ul>li:nth-child(4),
+.container2>ul>li:nth-child(5),
+.container2>ul>li:nth-child(6),
+.container2>ul>li:nth-child(7),
+.container2>ul>li:nth-child(8){
+    float:left;
+    padding: 0 14px;
+    font-size: 22px;
+    color: #bbbbbb;
+    font-weight: 900;
+}
+
+.container2>ul>li:nth-child(2){
+    color: red;
+}
+
+.container2>ul>li:nth-child(1):hover,
+.container2>ul>li:nth-child(2):hover,
+.container2>ul>li:nth-child(3):hover,
+.container2>ul>li:nth-child(4):hover,
+.container2>ul>li:nth-child(5):hover,
+.container2>ul>li:nth-child(6):hover,
+.container2>ul>li:nth-child(7):hover,
+.container2>ul>li:nth-child(8):hover {
+    color: black;
+    cursor: pointer;
+}
+
+
+
+
+.container2>div {
+    width: 286px;
+    height: 300px;
+
+    display: flex;
+
+}
+
+.container2>div>div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container2 h2 {
+    position: absolute;
+    text-align: center;
+    color: black;
+    width: 286px;
+    height: 30px;
+}
+
+.container2>div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.container2>div button{
+    background-color: white;
+    border: white;
+}
