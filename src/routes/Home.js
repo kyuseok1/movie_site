@@ -1,17 +1,18 @@
 import React from 'react'
 import Header from './Header';
 import { Container } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-
+import {  useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Home = () => {
   let state = useSelector ((state)=> state)
-  let dispatch = useDispatch()
+  
   return (
        <section>
     <Header></Header>
-    <Container>
+    <Container className='con'>
       <div className='first-container'> 
         <div className='home'>
            
@@ -23,24 +24,18 @@ const Home = () => {
         <div className='home3'>
           <div className='home3-inner'>
               <h1>Movie Tranding</h1>
-              <button id='home3button'> <a href='/'>랭킹보기</a> </button>
-              <button id='home3button2'><a href='/'>추천보기</a></button>
+              <button id='home3button'> <Link to='/Genre'>장르별보기</Link> </button>
+              <button id='home3button2'><Link to='/Suggest'>추천보기</Link> </button>
           </div>
         </div>
         <div className='home4'>
             <div className='home4-inner'>
             {
             state.ranking.map((a,i)=>
-            
-                    
-                    <img src={state.ranking[i].src}></img>
-                    
-                    
-                   
-                    
-           
+                  <Link to={`/Movie/${state.ranking[i].id}`}> <img src={state.ranking[i].src}></img></Link> 
             )
             }
+            
             </div>
         </div>
         
@@ -53,5 +48,5 @@ const Home = () => {
     
   )
 }
-
+// <Link to={state.ranking[i].name}> <img src={state.ranking[i].src}></img></Link> 
 export default Home

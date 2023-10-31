@@ -21,10 +21,8 @@ const Projects = () => {
 
       <Header></Header>
       <div className='rank'><button id='rank-link'> <Link to='/Ranking' > >> 일별 박스오피스 보러가기</Link></button></div>
-      
       <div className='random'>
-      
-      <button id='ran'> <Link to='/Suggest2' ><img src='/images/랜덤.png' className='randomplay'></img></Link> </button>
+      <button id='ran'> <Link to='/Suggest' ><img src='/images/랜덤.png' className='randomplay'></img></Link> </button>
       {     
             a.map((c,i)=>
                   <Link to={`/Movie/${a[i].id}`}> <img src={a[i].src}></img></Link> 
