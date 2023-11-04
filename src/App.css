@@ -317,7 +317,10 @@ h1{
   height: 30px;
   
 }
-
+.login-button{
+  position: relative;
+  top: 10px;
+}
 .movie-container{
   
   margin: 0 auto;

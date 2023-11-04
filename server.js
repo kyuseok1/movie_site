@@ -89,7 +89,7 @@ app.post('/Login', async (요청, 응답, next) => {
 
 })
 
-app.get('Login', (요청, 응답)=>{
+app.get('/Login', (요청, 응답)=>{
   응답.render('Login.js')
 }) 
 
@@ -102,6 +102,6 @@ app.post('/Register', async (요청, 응답) => {
 })
 
 
-app.get('Register', (요청, 응답)=>{
+app.get('/Register', (요청, 응답)=>{
   응답.render('Register.js')
 })

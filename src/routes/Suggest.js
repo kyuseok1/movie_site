@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
   let state = useSelector((state) => state)
- 
+  
   
   function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
   }
   let a= [...state.movie]
   let b= [shuffle(a)]
-  
   return (
 
     <>
@@ -24,10 +23,10 @@ const Projects = () => {
       
       <div className='random'>
       
-      <button id='ran'> <Link to='/Suggest2' ><img src='/images/랜덤.png' className='randomplay'></img></Link> </button>
+      <button id='ran'> <Link to='/Suggest2' ><img src='/images/랜덤.png' className='randomplay' alt=''></img></Link> </button>
       {     
             a.map((c,i)=>
-                  <Link to={`/Movie/${a[i].id}`}> <img src={a[i].src}></img></Link> 
+                  <Link to={`/Movie/${a[i].id}`}> <img src={a[i].src} alt=''></img></Link> 
                           
             )   
           

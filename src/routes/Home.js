@@ -3,8 +3,6 @@ import Header from './Header';
 import { Container } from "react-bootstrap";
 import {  useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
 
 const Home = () => {
   let state = useSelector ((state)=> state)
@@ -32,7 +30,7 @@ const Home = () => {
             <div className='home4-inner'>
             {
             state.ranking.map((a,i)=>
-                  <Link to={`/Movie/${state.ranking[i].id}`}> <img src={state.ranking[i].src}></img></Link> 
+                  <Link to={`/Movie/${state.ranking[i].id}`}> <img src={state.ranking[i].src} alt=''></img></Link> 
             )
             }
             

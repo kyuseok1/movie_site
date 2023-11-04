@@ -5,10 +5,7 @@ import { Link  } from 'react-router-dom'
 import { Container, Row, Col } from "react-bootstrap";
 const Genre = () => {
   let state = useSelector((state) => state)
-  
-  function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-  }
+
   let a= [...state.movie]
   let ani= a.filter(it => it.genre.includes(('ani')))
   let b= [...state.movie]

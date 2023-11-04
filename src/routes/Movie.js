@@ -23,7 +23,6 @@ function Movie(props) {
     myArr = new Set(myArr);
     myArr = [...myArr];
     localStorage.setItem('watched', JSON.stringify(myArr));
-
     },[]);
       
   return (
@@ -31,7 +30,7 @@ function Movie(props) {
     <Header></Header>
     <div className="movie-container"   >
         <div className='movie-container2'>
-        <img src={movie[id-1].src}></img>
+        <img src={movie[id-1].src} alt=''></img>
         <h4 >제목 : {movie[id-1].name}</h4>
         <h4> 장르 : {movie[id-1].genre}</h4>
         </div>
