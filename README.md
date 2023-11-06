@@ -24,20 +24,12 @@
 - [🌈 Background](#-background)
 - [🔗 Link](#-link)
   - [Github Repositories](#github-repositories)
-- [🔍 Preview](#-preview)
 - [🛠 Features](#-features)
 - [📈 Release Note](#-release-note)
-- [⚠️ Requirement](#️-requirement)
-- [⚙️ Installation](#️-installation)
-  - [Setup](#setup)
-  - [Client](#client)
-  - [Server](#server)
 - [🪃 Skills](#-skills)
   - [Client](#client-1)
   - [Server](#server-1)
-  - [Test](#test)
 - [🪛 Project Control](#-project-control)
-- [🚀 Deployment](#-deployment)
 - [🧗 Challenges](#-challenges)
   - [1. React Quill을 선택, 그리고 그 안에서 도전](#1-react-quill을-선택-그리고-그-안에서-도전)
     - [1) 에디터에 HTML문법이 자동으로 적용되는 현상](#1-에디터에-html문법이-자동으로-적용되는-현상)
@@ -49,7 +41,8 @@
 <br>
 
 # 🌈 Background
-평소에 넷플릭스를 보면서 넷플릭스같은 영화,애니를 추천해주는 사이트를 만들고 싶어서 시작한 프로젝입니다. 로그인, 회원가입없이 추천받을수 있는 사이트가 있으면 편리할꺼같아 만들게 되었습니다.
+평소에 넷플릭스를 보면서 넷플릭스같은 영화,애니를 추천해주는 사이트를 만들고 싶어서 시작한 프로젝입니다. <br> 
+로그인, 회원가입없이 추천받을수 있는 사이트가 있으면 편리할꺼같아 만들게 되었습니다.
 
 <br>
 
@@ -62,14 +55,8 @@
 - Screen
     - 상단에는 다양한 메뉴바가 있습니다.
     - 오른쪽 상단에서 회원가입/로그인을 확인 할 수 있습니다.
-    - 상단에 Custom Toolbar를 통해 텍스트 Style을 Markdown 문법으로 적용할 수 있습니다.
-
-- Custom Toolbar
-    - 커서 위치, 텍스트 드래그를 기준으로 Markdown 기능이 적용됩니다.
-    - 드래그한 영역을 대소문자로 변형을 해줍니다.
-    - 드래그한 영역을 리스트로 만들어줍니다.
-    - 접기, 목차, 테이블 등의 템플릿을 제공합니다.
-    - Editor 화면만 보기, Markdown 화면만 보기, Full Screen 모드를 제공합니다.
+    - Random 메뉴로 이동시, 상단 버튼을 눌러서 랜덤으로 영화를 추천받을수 있습니다.
+    - Genre 메뉴로 이동시, 장르별로 영화를 보여줍니다.
 
 - 로그인 / 회원가입하기
     - 로그인 / 회원가입 버튼을 클릭하면 로그인 / 회원가입 할 수 있는 링크로 이동합니다.
