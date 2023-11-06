@@ -31,8 +31,8 @@
   - [Server](#server-1)
 - [🪛 Project Control](#-project-control)
 - [🧗 Challenges](#-challenges)
-  - [1. React Quill을 선택, 그리고 그 안에서 도전](#1-react-quill을-선택-그리고-그-안에서-도전)
-  - [2. React Quill을 걷어내다](#2-mongodbpassport-라이브러리를-이용한-회원가입로그인-기능-구현)
+  - [1. axios를 통해 josn데이터 받기](#1-axios를-통해-josn데이터-받기)
+  - [2. Mongodb/Passport 라이브러리를 이용한 회원가입/로그인 기능 구현](#2-mongodbpassport-라이브러리를-이용한-회원가입로그인-기능-구현)
   - [3. aws를 이용한 프로젝트 배포](#3-aws를-이용한-프로젝트-배포)
 
 
