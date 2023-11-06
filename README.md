@@ -32,9 +32,7 @@
 - [🪛 Project Control](#-project-control)
 - [🧗 Challenges](#-challenges)
   - [1. React Quill을 선택, 그리고 그 안에서 도전](#1-react-quill을-선택-그리고-그-안에서-도전)
-    - [1) 에디터에 HTML문법이 자동으로 적용되는 현상](#1-에디터에-html문법이-자동으로-적용되는-현상)
-    - [2) GET 요청을 통해 데이터를 받아올 때 적용이 되지 않는 현상](#2-get-요청을-통해-데이터를-받아올-때-적용이-되지-않는-현상)
-  - [2. React Quill을 걷어내다](#2-react-quill을-걷어내다)
+  - [2. React Quill을 걷어내다](#2-mongodbpassport-라이브러리를-이용한-회원가입로그인-기능-구현)
   - [3. aws를 이용한 프로젝트 배포](#3-aws를-이용한-프로젝트-배포)
 
 
