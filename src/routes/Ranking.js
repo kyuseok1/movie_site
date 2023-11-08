@@ -7,22 +7,23 @@ import axios from 'axios';
 function Ranking ()  {
     
   const [data, setData] = useState([]);
-  
+ 
   	
   	useEffect(() => {
 		const fetchData = async() => {
-          const res = await axios.get(`https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20231103`);
-          return res.data;
+          const res = await  axios.get(`https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20231107`);
+          return res.data.boxOfficeResult.dailyBoxOfficeList;
         }	
         
         fetchData().then(res => setData(res));
         
     }, []);
     
+    
   return (
     <div>
+        {console.log(data)}
         
-        {console.log(JSON.stringify(data.boxOfficeResult.dailyBoxOfficeList[0]))}
       <Header></Header>
       
       <div class="container1">
@@ -40,11 +41,11 @@ function Ranking ()  {
           <th>개봉일</th>
           <th>관객수</th>
         </tr>
+        {  data.map((b) => (
+        <tr className='movie-rank' key={b.rnum}><th>{b.rank}</th><th>{b.movieNm}</th><th>{b.openDt}</th><th>{b.audiCnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}명</th></tr>
+        ))}    
         
         
-        { (data.boxOfficeResult.dailyBoxOfficeList).map((dailyBoxOfficeList) => (
-        <tr className='movie-rank' key={dailyBoxOfficeList.rnum}><th>{dailyBoxOfficeList.rank}</th><th>{dailyBoxOfficeList.movieNm}</th><th>{dailyBoxOfficeList.openDt}</th><th>{dailyBoxOfficeList.audiCnt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}명</th></tr>
-        ))} 
       </table>
     </div>
 </div>
@@ -54,5 +55,4 @@ function Ranking ()  {
 }
 
 export default Ranking
-
 

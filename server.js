@@ -7,8 +7,8 @@ const LocalStrategy = require('passport-local')
 const { MongoClient, ObjectId } = require('mongodb')
 
 
-app.listen(8080, function () {
-	console.log('listening on 8080')
+app.listen(8000, function () {
+	console.log('listening on 8000')
   });
 
 app.use(express.static(path.join(__dirname, '/build')));
