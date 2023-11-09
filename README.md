@@ -11,10 +11,6 @@
 
  `#영화` `#추천` `#빠르고쉽게` `#movie`  
 
-
-
----
-
 <br>
 
 # 📖 Contents
@@ -23,12 +19,9 @@
 - [📖 Contents](#-contents)
 - [🌈 Background](#-background)
 - [🔗 Link](#-link)
-  - [Github Repositories](#github-repositories)
 - [🛠 Features](#-features)
 - [📈 Release Note](#-release-note)
 - [🪃 Skills](#-skills)
-  - [Client](#client-1)
-  - [Server](#server-1)
 - [🪛 Project Control](#-project-control)
 - [🧗 Challenges](#-challenges)
   - [1. axios를 통해 josn데이터 받기](#1-axios를-통해-josn데이터-받기)
@@ -46,7 +39,7 @@
 
 # 🔗 Link
 
-- []
+- http://3.36.111.221:8000/
 
 
 # 🛠 Features
