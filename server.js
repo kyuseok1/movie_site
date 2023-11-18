@@ -32,7 +32,7 @@ new MongoClient(url).connect().then((client)=>{
   db = client.db('forum')
   
 }).catch((err)=>{
-  console.log(err)
+  console.log(err)x
 })
 
 app.get('/', function (요청, 응답) {

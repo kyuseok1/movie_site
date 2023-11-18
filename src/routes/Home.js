@@ -19,6 +19,23 @@ const Home = () => {
               </div>
         </div>
         </div>
+        <div className='watching'>
+          <div className='watching-inner'>
+          <h1>어디서나 자유롭게 추천받으세요!</h1>
+          </div>
+          <div className='watching-inner2'>
+          
+          </div>
+        </div>
+        <div className='watching2'>
+          <div className='watching2-inner'>
+          
+          </div>
+          <div className='watching2-inner2'>
+          <h1>오피스박스 순위를 확인해보세요!</h1>
+          </div>
+        </div>
+        
         <div className='home3'>
           <div className='home3-inner'>
               <h1>Movie Tranding</h1>
@@ -26,6 +43,7 @@ const Home = () => {
               <button id='home3button2'><Link to='/Suggest'>추천보기</Link> </button>
           </div>
         </div>
+       
         <div className='home4'>
             <div className='home4-inner'>
             {
