@@ -10,6 +10,7 @@ import Register from './routes/Register';
 import Movie from './routes/Movie';
 import Lasted from './routes/Lasted';
 import Ranking from './routes/Ranking';
+import Loading from './routes/Loading';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Movie/:id" element={<Movie/>} />
           <Route path="/Lasted" element={<Lasted/>} />
           <Route path="/Ranking" element={<Ranking/>} />
+          <Route path="/Loading" element={<Loading/>} />
           
       </Routes>
     </div>

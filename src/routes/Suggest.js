@@ -19,7 +19,7 @@ const Projects = () => {
     <>
 
       <Header></Header>
-      <div className='rank'><button id='rank-link'> <Link to='/Ranking' >  일별 박스오피스 보러가기 >></Link></button></div>
+      {/* <div className='rank'><button id='rank-link'> <Link to='/Ranking' > >> 일별 박스오피스 보러가기 </Link></button></div> */}
       
       <div className='random'>
       

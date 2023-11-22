@@ -51,7 +51,8 @@ button {
   width: 500px;
   padding: 10px 20px 0px;
   margin: auto;
- 
+  position: relative;
+  right: 50px;
 }
 
 .top a{
@@ -150,7 +151,7 @@ button {
 }
 .home3{
   width: 100%;
-  height: 200px;
+  height: 150px;
   position: relative;
   top: 50px;
   background: radial-gradient( 51.39% 511.66% at 47.68% -217.91%, #ff9900 0%, #e50914 17.27%, #0e1b4f 79.44%, #000413 100% );
@@ -246,8 +247,8 @@ h1{
   background-color: white;
 }
 .randomplay{
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   
   display: flex;
   justify-content: center;
@@ -411,7 +412,12 @@ h1{
 .movie-container2 h4{
     padding-top: 10px;
 }
-
+.oval{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .lasted {
   width: 200px;
   height: 80vh;
@@ -524,13 +530,18 @@ th, td {
     .home4{
       height: 200px;
     }
-    .randomplay{
-      width: 20%;
-      height: 60%;
-    }
-    .random img{
-      width: 100px;
+    
+    .random{
       height: 100px;
+    }
+    #ran{
+      position: relative;
+      
+    }
+    #rank-link{
+      width: 80px;
+      height: 70px;
+      position: relative;
     }
     .genre-link img {
       width: 100%;
@@ -558,6 +569,9 @@ th, td {
   .movie-container2{
     position: relative;
     top: 100px;
+  }
+  .top{
+    font-size: 15px;
   }
   
 }

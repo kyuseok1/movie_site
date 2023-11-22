@@ -2,16 +2,24 @@
 import React, { useState,useEffect } from 'react';
 import Header from './Header';
 import axios from 'axios';
-
+import Loading from './Loading';
 
 function Ranking ()  {
-    
+  const [loding, setLoding] = useState(true);
   const [data, setData] = useState([]);
- 
-  	
+  let today = new Date(); 
+  let time = {
+    year: today.getFullYear(),  //현재 년도
+    month: today.getMonth() + 1, // 현재 월
+    date: today.getDate(), // 현제 날짜
+  }	
+  let timestring = `${time.year}${time.month}${time.date-1}`;
   	useEffect(() => {
+      setLoding(true)
 		const fetchData = async() => {
-          const res = await  axios.get(`https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20231107`);
+      
+          const res = await  axios.get(`https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${timestring}`);
+          setLoding(false)
           return res.data.boxOfficeResult.dailyBoxOfficeList;
         }	
         
@@ -22,13 +30,15 @@ function Ranking ()  {
     
   return (
     <div>
-        {console.log(data)}
+        {loding ? ( 
+        <Loading/>) : (
+
         
+    <div>
       <Header></Header>
-      
       <div class="container1">
           <div class="inner">
-              <span > Home > 11월 03일 박스오피스</span>
+              <span > Home > {time.year}년 {time.month}월 {time.date}일 박스오피스</span>
               
           </div>
       </div>
@@ -48,8 +58,9 @@ function Ranking ()  {
         
       </table>
     </div>
-</div>
-
+    </div>
+        )}
+        </div>
   );
   
 }

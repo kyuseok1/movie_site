@@ -14,6 +14,7 @@ function Header() {
     <Link to="/Suggest">Random</Link>
     <Link to="/Login">Login</Link>
     <Link to="/Register">Register</Link>
+    <Link to="/Ranking">Ranking</Link>
     
     <div class="top"></div>
     </div>
