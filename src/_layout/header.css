@@ -1,0 +1,87 @@
+.head {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: fixed;
+  z-index: 3;
+  color: white;
+}
+
+.hover {
+  width: 100%;
+  height: 220px;
+  background-color: black;
+  position: fixed;
+  z-index: 100000;
+  color: white;
+}
+
+.menu {
+  position: fixed;
+  top: 10px;
+  height: 50px;
+  left: 85%;
+  right: 0;
+}
+.menu span {
+  padding-right: 10px;
+}
+.btn-x {
+  display: none;
+}
+.head button {
+  width: 70px;
+  height: 30px;
+  position: relative;
+  font-size: 17px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.head button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.top {
+  height: 100%;
+  width: 60%;
+  padding: 15px 20px 0px;
+  margin: auto;
+  position: relative;
+  right: 50px;
+  overflow: hidden;
+}
+
+.topul > li {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.topul2 {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.topul2 li {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.tophover a {
+  padding-right: 33%;
+}
+
+.top a:hover {
+  color: violet;
+  font-weight: 600;
+  text-decoration: underline;
+}
