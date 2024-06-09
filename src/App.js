@@ -38,8 +38,8 @@ function App() {
                 <Route path="/Home" element={<Home />} />
                 <Route path="/Headertv" element={<Headertv />} />
                 <Route path="/Headermovie" element={<Headermovie />} />
-                <Route path="/Login" element={<Login />} />
-                <Route path="/Register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="/Movie/:id" element={<Movie />} />
                 <Route path="/Search" element={<Search />} />
                 <Route path="/Loading" element={<Loading />} />

@@ -11,17 +11,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(
-          `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/api/user`,
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get(`${apiUrl}/api/user`, {
+          withCredentials: true,
+        });
         setUser(response.data);
         if (response.data && response.data.username) {
           localStorage.setItem("username", response.data.username);
@@ -62,26 +59,14 @@ const Login = () => {
       alert("Error logging in");
     }
   };
+
   const handleGoogleLogin = () => {
-    window.location.href = `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/auth/google`;
+    window.location.href = `${apiUrl}/auth/google`;
   };
 
-  const handleLogout = async () => {
-    try {
-      await fetch(
-        `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/auth/logout`,
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
-      localStorage.removeItem("username");
-      localStorage.removeItem("token");
-      setUsername("");
-      navigate("/");
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    window.location.href = `${apiUrl}/auth/logout`;
   };
 
   return (

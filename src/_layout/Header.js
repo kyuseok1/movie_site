@@ -6,6 +6,7 @@ function Header() {
   const [isHovering, setIsHovering] = useState(false);
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -17,7 +18,7 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch("https://movie-mate0.vercel.app/auth/logout", {
+      await fetch(`${apiUrl}/auth/logout`, {
         method: "GET",
         credentials: "include",
       });
