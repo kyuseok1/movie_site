@@ -16,9 +16,12 @@ const Login = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/api/user`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/api/user`,
+          {
+            withCredentials: true,
+          }
+        );
         setUser(response.data);
         if (response.data && response.data.username) {
           localStorage.setItem("username", response.data.username);
@@ -60,13 +63,13 @@ const Login = () => {
     }
   };
   const handleGoogleLogin = () => {
-    window.location.href = `${apiUrl}/auth/google`;
+    window.location.href = `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/auth/google`;
   };
 
   const handleLogout = async () => {
     try {
       await fetch(
-        `$https://evening-anchorage-43403-9beb701402c9.herokuapp.com/auth/logout`,
+        `https://evening-anchorage-43403-9beb701402c9.herokuapp.com/auth/logout`,
         {
           method: "GET",
           credentials: "include",
