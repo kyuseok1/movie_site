@@ -61,12 +61,20 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = `${apiUrl}/auth/google`;
+    window.open(`${apiUrl}/auth/google`, "_self");
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("username");
-    window.location.href = `${apiUrl}/auth/logout`;
+  const handleLogout = async () => {
+    try {
+      await axios.get(`${apiUrl}/auth/logout`, {
+        withCredentials: true,
+      });
+      localStorage.removeItem("username");
+      navigate("/");
+    } catch (error) {
+      console.error("Error logging out:", error);
+      alert("Error logging out");
+    }
   };
 
   return (
