@@ -17,15 +17,14 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch("/auth/logout", {
+      await fetch("https://movie-mate0.vercel.app/auth/logout", {
         method: "GET",
         credentials: "include",
       });
       localStorage.removeItem("username");
       localStorage.removeItem("token");
-
       setUsername("");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.error("Error logging out:", error);
     }
