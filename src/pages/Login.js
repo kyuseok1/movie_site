@@ -14,7 +14,7 @@ const Login = () => {
   const apiUrl =
     process.env.REACT_APP_API_URL ||
     "https://evening-anchorage-43403-9beb701402c9.herokuapp.com";
-
+  console.log("API URL:", apiUrl);
   useEffect(() => {
     const fetchUserData = async () => {
       try {
