@@ -6,8 +6,10 @@ function Header() {
   const [isHovering, setIsHovering] = useState(false);
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
-  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
-
+  const apiUrl =
+    process.env.REACT_APP_API_URL ||
+    "https://evening-anchorage-43403-9beb701402c9.herokuapp.com";
+  console.log("API URL:", apiUrl);
   const handleMouseOver = () => {
     setIsHovering(true);
   };

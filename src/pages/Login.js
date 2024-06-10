@@ -11,7 +11,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const apiUrl =
+    process.env.REACT_APP_API_URL ||
+    "https://evening-anchorage-43403-9beb701402c9.herokuapp.com";
 
   useEffect(() => {
     const fetchUserData = async () => {
