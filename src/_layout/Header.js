@@ -10,6 +10,7 @@ function Header() {
     process.env.REACT_APP_API_URL ||
     "https://evening-anchorage-43403-9beb701402c9.herokuapp.com";
   console.log("API URL:", apiUrl);
+
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -20,14 +21,22 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      await fetch(`${apiUrl}/auth/logout`, {
+      const logoutUrl = `${apiUrl}/auth/logout`;
+      console.log("Logging out with URL:", logoutUrl);
+
+      const response = await fetch(logoutUrl, {
         method: "GET",
         credentials: "include",
       });
-      localStorage.removeItem("username");
-      localStorage.removeItem("token");
-      setUsername("");
-      navigate("/");
+
+      if (response.ok) {
+        localStorage.removeItem("username");
+        localStorage.removeItem("token");
+        setUsername("");
+        navigate("/");
+      } else {
+        console.error("Logout failed:", response.statusText);
+      }
     } catch (error) {
       console.error("Error logging out:", error);
     }
