@@ -14,7 +14,7 @@ const Register = () => {
     try {
       await register(username, password, email);
       alert("User registered successfully");
-      navigate("/login");
+      navigate("/Login");
     } catch (error) {
       alert("Error registering user");
     }

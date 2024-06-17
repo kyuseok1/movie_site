@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./header.css";
-
+import { useEffect } from "react";
 function Header() {
   const [isHovering, setIsHovering] = useState(false);
-  const [username, setUsername] = useState("");
   const navigate = useNavigate();
-  const apiUrl =
-    process.env.REACT_APP_API_URL ||
-    "https://evening-anchorage-43403-9beb701402c9.herokuapp.com";
-  console.log("API URL:", apiUrl);
-
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -18,28 +13,12 @@ function Header() {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
-
-  const handleLogout = async () => {
-    try {
-      const logoutUrl = `${apiUrl}/auth/logout`;
-      console.log("Logging out with URL:", logoutUrl);
-
-      const response = await fetch(logoutUrl, {
-        method: "GET",
-        credentials: "include",
-      });
-
-      if (response.ok) {
-        localStorage.removeItem("username");
-        localStorage.removeItem("token");
-        setUsername("");
-        navigate("/");
-      } else {
-        console.error("Logout failed:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
+  const [username, setUsername] = useState("");
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setUsername("");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -49,75 +28,76 @@ function Header() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log("Username State Updated:", username);
-  }, [username]);
-
   return (
-    <header>
-      <div className={isHovering ? "head hover" : "head"}>
-        <div
-          className="top"
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-        >
-          <nav>
-            <ul className="topul">
-              <li>
-                <Link to="/">Home</Link>
-                <ul className="topul2"></ul>
-              </li>
-              <li>
-                <Link to="/Headertv">TV</Link>
-                <ul className="topul2">
-                  <li>
-                    <Link to="/Headertv">인기순</Link>
-                  </li>
-                  <li>
-                    <Link to="/Tvrating">평점순</Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link to="/Headermovie">Movie</Link>
-                <ul className="topul2">
-                  <li>
-                    <Link to="/Headermovie">인기순</Link>
-                  </li>
-                  <li>
-                    <Link to="/Movierating">평점순</Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link to="/Search">Search</Link>
-                <ul className="topul2"></ul>
-              </li>
-              <li>
-                <Link to="/bookmarks">Bookmarks</Link>
-                <ul className="topul2"></ul>
-              </li>
-            </ul>
-          </nav>
+    <>
+      <header>
+        <div className={isHovering ? "head hover" : "head"}>
+          <div
+            className="top"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
+            <nav>
+              <ul className="topul">
+                <li>
+                  <Link to="/">Home</Link>
+                  <ul className="topul2"></ul>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/Headertv">TV</Link>
+                  <ul className="topul2">
+                    <li>
+                      <Link to="/Headertv">인기순</Link>
+                    </li>
+                    <li>
+                      <Link to="/Tvrating">평점순</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link to="/Headermovie">Movie</Link>
+                  <ul className="topul2">
+                    <li>
+                      <Link to="/Headermovie">인기순</Link>
+                    </li>
+                    <li>
+                      <Link to="/Movierating">평점순</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link to="/Search">Search</Link>
+                  <ul className="topul2"></ul>
+                </li>
+                <li>
+                  <Link to="/bookmarks">Bookmarks</Link>
+                  <ul className="topul2"></ul>
+                </li>
+              </ul>
+            </nav>
 
-          {username ? (
-            <div className="menu">
-              <span>Welcome, {username}</span>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
-          ) : (
-            <div className="menu">
-              <button>
-                <Link to="/Register">회원가입</Link>
-              </button>
-              <button>
-                <Link to="/Login">로그인</Link>
-              </button>
-            </div>
-          )}
+            {username ? (
+              <>
+                <div className="menu">
+                  <span>Welcome, {username}</span>
+                  <button onClick={handleLogout}>Logout</button>
+                </div>
+              </>
+            ) : (
+              <div className="menu">
+                <button>
+                  <Link to="/Register">회원가입</Link>
+                </button>
+                <button>
+                  <Link to="/Login">로그인</Link>
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
 
