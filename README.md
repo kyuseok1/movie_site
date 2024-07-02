@@ -11,7 +11,7 @@ OPEN TMDB API를 활용한 영화, TV 프로그램을 간단하게 볼 수 있�
 <br>
 
 
-## 🚀 Demo 링크, server 코드 링크
+## 🚀 Demo 링크, 백엔드 코드 링크
 https://movie-mate0.vercel.app/ <br>
 https://github.com/kyuseok1/movie-server
 <br>
