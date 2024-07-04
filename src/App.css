@@ -3,25 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 li {
   list-style-type: none;
 }
 @font-face {
   font-family: omyu;
-  src: url("../src/assets/font/오뮤_다예쁨체.ttf");
+  src: url("../src/assets/font/오뮤_다예쁨체.ttf") !important;
 }
 body {
   background-color: white;
 }
-
 button {
-  font-family: omyu;
+  font-family: omyu !important;
+}
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  max-width: 100% !important;
 }
 
 .home {
@@ -70,7 +75,6 @@ button {
   align-items: center;
   display: flex;
   position: relative;
-  top: 50px;
 }
 .slider-inner {
   width: 50%;
@@ -85,7 +89,7 @@ button {
   font-weight: 900;
   display: flex;
   position: relative;
-  top: 50px;
+
   border-bottom: 1px solid gray;
 }
 .watching-inner {
@@ -117,7 +121,6 @@ button {
   align-items: center;
   border-bottom: 3px solid gray;
   position: relative;
-  top: 50px;
 }
 .watching2-inner {
   width: 50%;
@@ -137,67 +140,12 @@ button {
   justify-content: center;
   align-items: center;
 }
-.home3-movie {
-  width: 100%;
-  height: 100px;
-  position: relative;
-  top: 50px;
-  background: radial-gradient(
-    51.39% 511.66% at 47.68% -217.91%,
-    #9e7e4d 0%,
-    #00e990 17.27%,
-    #0e1b4f 79.44%,
-    #000413 100%
-  );
-  box-shadow: 0px -8px 25px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  text-align: center;
-}
-.home3-inner-movie {
-  width: 75%;
-  height: 100%;
-  margin: 0 auto;
-  z-index: 3;
-  color: white;
-  position: relative;
-  top: 30px;
-}
-.home3-inner-movie h3 {
-  float: left;
-  font-size: 17px;
-}
-#home3-inner-button {
-  display: none;
-}
-.home3-inner-movie button:nth-child(1) {
-  margin-left: 20px;
-}
-.home3-inner-movie button {
-  float: right;
-  cursor: pointer;
-}
-.home3 {
-  width: 100%;
-  height: 150px;
-  position: relative;
-  top: 50px;
-  background: radial-gradient(
-    51.39% 511.66% at 47.68% -217.91%,
-    #ff9900 0%,
-    #e50914 17.27%,
-    #0e1b4f 79.44%,
-    #000413 100%
-  );
-  box-shadow: 0px -8px 25px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  text-align: center;
-}
 
 .home5 {
   width: 100%;
   height: 150px;
   position: relative;
-  top: 50px;
+
   background: radial-gradient(
     51.39% 511.66% at 47.68% -217.91%,
     #3b8790 0%,
@@ -213,7 +161,7 @@ button {
 .first-container {
   width: 100%;
   height: 500px;
-  top: 50px;
+
   background-image: url(../src/assets/images/KR-ko-20231002-popsignuptwoweeks-perspective_alpha_website_small.jpg);
   opacity: 0.9;
   background-repeat: no-repat;
@@ -223,44 +171,6 @@ button {
   overflow: hidden;
 }
 
-.home3-inner {
-  width: 75%;
-  height: 100px;
-  margin: 0 auto;
-  z-index: 3;
-  color: white;
-  position: relative;
-  top: 60px;
-}
-.home3-inner h1 {
-  float: left;
-  padding-right: 30px;
-  font-size: 32px;
-}
-.home3-inner h3 {
-  float: left;
-  padding-right: 30px;
-  font-size: 20px;
-}
-.home3-inner button {
-  width: 90px;
-  height: 25px;
-  float: left;
-  border-radius: 10px;
-  border: #f2ebe6;
-  font-size: 1em;
-  color: black;
-  position: relative;
-  top: 10px;
-  font-weight: 900;
-}
-.home3-inner button:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-#home3pink {
-  background-color: violet;
-}
 .btnhover {
   background-color: gray;
   border-radius: 50px;
@@ -273,74 +183,9 @@ button {
     opacity: 1;
   }
 }
-.home3-inner button + button {
-  margin-left: 10px;
-}
-.home4-movie {
-  width: 100%;
-  height: 200px;
-  position: relative;
-  background-color: #000413;
-  top: 30px;
-}
-.home4 {
-  width: 100%;
-  height: 250px;
-  position: relative;
-  background-color: #000413;
-  top: 30px;
-}
-.headerMovieGenre {
-  width: 75%;
-  height: 100%;
-  background-color: white;
-  margin: auto;
-  background-color: black;
-}
-.headerMovieGenre img {
-  width: calc(100% / 12);
-  height: 100%;
-  float: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-}
 
-.headerMovieGenre img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-}
-
-.headerMovieGenre img + img {
-  padding-left: 30px;
-}
-.home4-inner {
-  width: 75%;
-  height: 100%;
-  background-color: white;
-  margin: auto;
-  background-color: black;
-}
 h1 {
   z-index: 1003;
-}
-.home4-inner img {
-  width: calc(100% / 8);
-  height: 100%;
-  float: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-}
-
-.home4-inner img:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
-}
-
-.home4-inner button {
-  position: absolute;
-  top: 50px;
-}
-
-.home4-inner img + img {
-  padding-left: 30px;
 }
 
 .movie-trend-img {
@@ -361,7 +206,7 @@ h1 {
   width: 80%;
   height: 150px;
   position: relative;
-  top: 50px;
+
   margin: 0 auto;
   text-align: center;
 }
@@ -405,7 +250,6 @@ h1 {
   background-color: #aa5faa;
   color: white;
   position: absolute;
-  top: 50px;
 }
 
 .inner {
@@ -413,19 +257,132 @@ h1 {
   width: 70%;
   height: 60px;
   margin: auto;
-  padding-top: 20px;
+
   font-size: 15px;
   display: flex;
 }
+.inner span {
+  width: 30%;
+  padding-top: 20px;
+}
 .inner2 {
-  width: 50%;
-  height: 50px;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .inner2 button {
-  position: relative;
-  left: 110px;
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: 1px solid #343a40;
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
+.genre-buttons-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.genre-button {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: 1px solid #343a40;
+  border-radius: 15px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.genre-button:hover {
+  background-color: #343a40;
+  color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.genre-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination3 {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  list-style: none;
+  top: 100px;
+}
+
+.pagination3 li {
+  margin: 0 0.25rem;
+}
+
+.pagination3 li a {
+  color: black;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination3 li a:hover {
+  background-color: #e9ecef;
+  color: black;
+}
+
+.pagination3 li.active a {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.pagination3 li.disabled a {
+  color: #6c757d;
+}
+
+.pagination3 li.disabled a:hover {
+  background-color: transparent;
+  color: #6c757d;
+}
+
+.pagination3 .break-me {
+  cursor: default;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin: 0 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .genre-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .genre-buttons-container {
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .genre-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
 .pagenation {
   width: 50%;
   height: 90px;
@@ -472,7 +429,7 @@ h1 {
   height: 100%;
   float: left;
   position: relative;
-  top: 50px;
+
   text-align: center;
 }
 
@@ -582,6 +539,7 @@ h1 {
   position: relative;
   height: 90vh;
 }
+
 .movie-container3 {
   position: relative;
   top: 90px;
@@ -845,7 +803,7 @@ h1 {
   width: 100%;
   height: 100%;
   position: relative;
-  top: 50px;
+
   margin: auto;
   text-align: center;
 }
@@ -864,7 +822,7 @@ h1 {
   height: 80vh;
 
   position: fixed;
-  top: 50px;
+
   right: 30px;
   overflow: hidden;
 }
@@ -1106,18 +1064,27 @@ h1 {
     width: 70%;
   }
   .first-container {
-    height: 300px;
+    height: 250px;
     background-size: cover;
   }
   .home {
-    height: 300px;
+    height: 250px;
+  }
+  .movie-rank-container {
+    top: 100px;
+  }
+  .genre-button {
+    padding: 2px 2px;
+    border-radius: 10px;
   }
   .inner2 button {
-    position: relative;
-    left: 0px;
+    padding: 2px 2px;
+    border-radius: 10px;
+    font-size: 12px;
   }
   .inner2 {
-    width: 80%;
+    gap: 5px;
+    padding: 10px;
   }
   .inner {
     padding-left: 0px;
@@ -1143,25 +1110,7 @@ h1 {
   .gototop button {
     right: 2vw;
   }
-  .home3-inner {
-    width: 100%;
-  }
-  .home3-inner h1 {
-    font-size: 20px;
-    margin-left: 30px;
-    margin-top: 5px;
-  }
-  .home4 {
-    height: 100px;
-  }
-  .home4-movie {
-    height: 105px;
-    overflow: hidden;
-  }
 
-  .home3-movie {
-    height: 80px;
-  }
   #ran {
     position: relative;
   }

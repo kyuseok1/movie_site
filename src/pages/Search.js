@@ -62,7 +62,7 @@ const Search = () => {
     if (!inputdata) return;
     const options = {
       method: "GET",
-      url: `https://api.themoviedb.org/3/search/${search}`, //tv나 movie 검색
+      url: `https://api.themoviedb.org/3/search/${search}`,
       params: {
         query: inputdata,
         include_adult: "false",
@@ -80,7 +80,7 @@ const Search = () => {
       .request(options)
       .then((response) => {
         setSearchdata(response.data.results);
-        setTotalPages(response.data.total_pages); // Set total pages for pagination
+        setTotalPages(response.data.total_pages);
       })
       .catch((error) => {
         console.error(error);
@@ -181,7 +181,17 @@ const Search = () => {
       <div className="container1">
         <div className="inner">{<span>Home {">"} Search</span>}</div>
       </div>
-
+      <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        breakLabel={"..."}
+        pageCount={totalPages}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination3"}
+        activeClassName={"active"}
+      />
       <div className="movie-search-container">
         <div>
           <b>제목: </b>
@@ -211,18 +221,6 @@ const Search = () => {
         </div>
         {renderSearchResults()}
       </div>
-
-      <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
-        breakLabel={"..."}
-        pageCount={totalPages}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        activeClassName={"active"}
-      />
 
       <GoToTop />
     </div>

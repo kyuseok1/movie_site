@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.js";
 import Headertv from "./pages/tvpages/Headertv.js";
@@ -20,7 +19,8 @@ import TvRatingGenre from "./pages/tvpages/TvRatingGenre.js";
 import { Provider } from "react-redux";
 import { store } from "./reducers/store.js";
 import Bookmarks from "./pages/Bookmarks.js";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 function App() {
   return (
     <Provider store={store}>

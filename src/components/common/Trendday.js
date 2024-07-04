@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./Trendday.css";
 
 function Trendday({ name, name2 }) {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
-  const totalPost = data.length; // 총 데이터 수
+  const [itemsPerPage, setItemsPerPage] = useState(
+    window.innerWidth <= 768 ? 3 : 8
+  );
 
   const dataFetch = useCallback(async () => {
     try {
@@ -30,21 +33,68 @@ function Trendday({ name, name2 }) {
     dataFetch();
   }, [dataFetch]);
 
+  const handleResize = useCallback(() => {
+    if (window.innerWidth <= 768) {
+      setItemsPerPage(3);
+    } else {
+      setItemsPerPage(8);
+    }
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
+
+  const nextPage = () => {
+    if ((page + 1) * itemsPerPage < data.length) {
+      setPage(page + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+  };
+
   return (
     <>
-      {data.slice(page, page + 8).map((a, i) => (
-        <React.Fragment key={a.id}>
-          <a className="num">{i + 1}</a>
-          <div className="movie-trend-img">
-            <Link to={`/${name}/${a.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${a.poster_path}`}
-                alt={a.title || a.name}
-              />
-            </Link>
-          </div>
-        </React.Fragment>
-      ))}
+      <div className="trendday-container">
+        <div className="trendday-items">
+          {data
+            .slice(page * itemsPerPage, (page + 1) * itemsPerPage)
+            .map((a, i) => (
+              <div className="trendday-item" key={a.id}>
+                <a className="num">{i + 1 + page * itemsPerPage}</a>
+                <div className="movie-trend-img">
+                  <Link to={`/${name}/${a.id}`}>
+                    <img
+                      src={
+                        a.poster_path
+                          ? `https://image.tmdb.org/t/p/w200/${a.poster_path}`
+                          : "https://via.placeholder.com/200x300?text=No+Image"
+                      }
+                      alt={a.title || a.name}
+                    />
+                  </Link>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+      <div className="pagination2">
+        <button onClick={prevPage} disabled={page === 0}>
+          Previous
+        </button>
+        <button
+          onClick={nextPage}
+          disabled={(page + 1) * itemsPerPage >= data.length}
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 }

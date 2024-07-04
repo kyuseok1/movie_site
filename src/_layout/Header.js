@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import "./header.css";
-import { useEffect } from "react";
+
 function Header() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -13,12 +16,16 @@ function Header() {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
-  const [username, setUsername] = useState("");
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     setUsername("");
     navigate("/");
+  };
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
   };
 
   useEffect(() => {
@@ -29,75 +36,71 @@ function Header() {
   }, []);
 
   return (
-    <>
-      <header>
-        <div className={isHovering ? "head hover" : "head"}>
-          <div
-            className="top"
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            <nav>
-              <ul className="topul">
-                <li>
-                  <Link to="/">Home</Link>
-                  <ul className="topul2"></ul>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/Headertv">TV</Link>
-                  <ul className="topul2">
-                    <li>
-                      <Link to="/Headertv">인기순</Link>
-                    </li>
-                    <li>
-                      <Link to="/Tvrating">평점순</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link to="/Headermovie">Movie</Link>
-                  <ul className="topul2">
-                    <li>
-                      <Link to="/Headermovie">인기순</Link>
-                    </li>
-                    <li>
-                      <Link to="/Movierating">평점순</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link to="/Search">Search</Link>
-                  <ul className="topul2"></ul>
-                </li>
-                <li>
-                  <Link to="/bookmarks">Bookmarks</Link>
-                  <ul className="topul2"></ul>
-                </li>
-              </ul>
-            </nav>
-
-            {username ? (
-              <>
-                <div className="menu">
-                  <span>Welcome, {username}</span>
-                  <button onClick={handleLogout}>Logout</button>
-                </div>
-              </>
-            ) : (
-              <div className="menu">
-                <button>
-                  <Link to="/Register">회원가입</Link>
-                </button>
-                <button>
-                  <Link to="/Login">로그인</Link>
-                </button>
-              </div>
-            )}
+    <Navbar
+      expand="lg"
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      className={`head ${isExpanded ? "expanded" : ""}`}
+    >
+      <Container>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={handleToggle}
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <div className="navbar-content">
+            <div className="main-nav-content">
+              <Nav className="navbar-nav">
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
+                <NavDropdown title="TV" id="basic-nav-dropdown">
+                  <NavDropdown.Item as={Link} to="/Headertv">
+                    인기순
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/Tvrating">
+                    평점순
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Movie" id="basic-nav-dropdown">
+                  <NavDropdown.Item as={Link} to="/Headermovie">
+                    인기순
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/Movierating">
+                    평점순
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link as={Link} to="/Search">
+                  Search
+                </Nav.Link>
+                <Nav.Link as={Link} to="/bookmarks">
+                  Bookmarks
+                </Nav.Link>
+              </Nav>
+            </div>
+            <div className="auth-buttons">
+              {username ? (
+                <>
+                  <Nav.Link disabled>Welcome, {username}</Nav.Link>
+                  <Button variant="outline-light" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="outline-light" as={Link} to="/Register">
+                    회원가입
+                  </Button>
+                  <Button variant="outline-light" as={Link} to="/Login">
+                    로그인
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      </header>
-    </>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

@@ -3,6 +3,7 @@ import Header from "../_layout/Header";
 import { Container } from "react-bootstrap";
 import Trendday from "../components/common/Trendday";
 import HomeMovieGenre from "../components/movie/HomeMovieGenre";
+import "./Home.css";
 
 const Section = ({ title, trend, setTrend, isMovie }) => (
   <>
@@ -10,27 +11,30 @@ const Section = ({ title, trend, setTrend, isMovie }) => (
       <div className="home3">
         <div className="home3-inner">
           <h1>{title} Tranding</h1>
-          <button id={trend ? "home3pink" : ""} onClick={() => setTrend(true)}>
-            <a>일간</a>
-          </button>
-          <button
-            id={!trend ? "home3pink" : ""}
-            onClick={() => setTrend(false)}
-          >
-            주간
-          </button>
+          <div className="button-container">
+            <button
+              id={trend ? "home3pink" : ""}
+              onClick={() => setTrend(true)}
+            >
+              <a>일간</a>
+            </button>
+            <button
+              id={!trend ? "home3pink" : ""}
+              onClick={() => setTrend(false)}
+            >
+              <a>주간</a>
+            </button>
+          </div>
         </div>
       </div>
     </section>
     <section>
       <div className="home4">
-        <div className="home4-inner">
-          {trend ? (
-            <Trendday name={isMovie ? "movie" : "tv"} name2="day" />
-          ) : (
-            <Trendday name={isMovie ? "movie" : "tv"} name2="week" />
-          )}
-        </div>
+        {trend ? (
+          <Trendday name={isMovie ? "movie" : "tv"} name2="day" />
+        ) : (
+          <Trendday name={isMovie ? "movie" : "tv"} name2="week" />
+        )}
       </div>
     </section>
   </>

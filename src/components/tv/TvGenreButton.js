@@ -15,23 +15,19 @@ function GenreButtons({ basePath }) {
   const currentGenreId = location.pathname.split("/").pop();
 
   return (
-    <div className="inner2">
+    <div className="genre-buttons-container">
       {genres.map((genre) => (
-        <button
+        <Link
           key={genre.id}
-          style={{
-            backgroundColor: genre.id === currentGenreId ? "blue" : "",
-            color: genre.id === currentGenreId ? "white" : "",
-          }}
+          to={`/${basePath === "Tvgenre" ? "Tvgenre" : "TvRatingGenre"}/${
+            genre.id
+          }`}
+          className={`genre-button ${
+            genre.id === currentGenreId ? "active" : ""
+          }`}
         >
-          <Link
-            to={`/${basePath === "Tvgenre" ? "Tvgenre" : "TvRatingGenre"}/${
-              genre.id
-            }`}
-          >
-            {genre.name}
-          </Link>
-        </button>
+          {genre.name}
+        </Link>
       ))}
     </div>
   );
