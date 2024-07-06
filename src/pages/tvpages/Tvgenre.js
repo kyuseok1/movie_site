@@ -10,9 +10,9 @@ import {
 } from "../../reducers/bookmarkActions";
 import { useQuery } from "react-query";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import "../pagination.css";
 import TvGenreButton from "../../components/tv/TvGenreButton";
-import Pagination from "../../components/common/Pagination";
 import TvList from "../../components/tv/TvList";
 
 const fetchTVShows = async ({ queryKey }) => {
@@ -75,12 +75,29 @@ function Tvgenre() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} TV {">"} 인기순
-          </span>
+          <span>TV {">"} 인기순</span>
           <TvGenreButton setPage={setPage} basePath="Tvgenre" />
         </div>
-        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          disabledClassName={"disabled"}
+        />
       </div>
       <TvList
         tv={data.results}

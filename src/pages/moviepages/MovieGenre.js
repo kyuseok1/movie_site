@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useQuery } from "react-query";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import MovieGenreButton from "../../components/movie/MovieGenreButton";
 import Header from "../../_layout/Header";
 import GoToTop from "../../components/common/GoToTop";
 import Loading from "../../components/common/Loading";
-import Pagination from "../../components/common/Pagination";
 import MovieList from "../../components/movie/MovieList";
 import {
   addMovieBookmark,
@@ -83,12 +83,29 @@ function MovieGenre() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} Movie {">"} 인기순
-          </span>
+          <span>Movie {">"} 인기순</span>
           <MovieGenreButton setPage={setPage} basePath="MovieGenre" />
         </div>
-        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          disabledClassName={"disabled"}
+        />
       </div>
       <MovieList
         movies={data.results}

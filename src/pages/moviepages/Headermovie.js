@@ -63,9 +63,7 @@ function Headermovie() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} Movie {">"} 인기순
-          </span>
+          <span>Movie {">"} 인기순</span>
           <GenreButtons basePath="MovieGenre" />
         </div>
       </div>

@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useQuery } from "react-query";
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 import MovieGenreButton from "../../components/movie/MovieGenreButton";
 import Header from "../../_layout/Header";
 import GoToTop from "../../components/common/GoToTop";
 import Loading from "../../components/common/Loading";
-import Pagination from "../../components/common/Pagination";
 import MovieList from "../../components/movie/MovieList";
-
 import {
   addMovieBookmark,
   removeMovieBookmark,
@@ -43,7 +42,6 @@ const fetchMovies = async ({ queryKey }) => {
 function MovieRatingGenre() {
   const { id } = useParams();
   const [page, setPage] = useState(1);
-
   const movieBookmarks =
     useSelector((state) => state.bookmarks.movieBookmarks) || [];
   const dispatch = useDispatch();
@@ -67,9 +65,9 @@ function MovieRatingGenre() {
     [movieBookmarks, dispatch]
   );
 
-  const handlePageClick = useCallback((data) => {
+  const handlePageClick = (data) => {
     setPage(data.selected + 1);
-  }, []);
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -86,12 +84,29 @@ function MovieRatingGenre() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} Movie {">"} 평점순
-          </span>
-          <MovieGenreButton setPage={setPage} />
+          <span>Movie {">"} 평점순</span>
+          <MovieGenreButton setPage={setPage} basePath="MovieRatingGenre" />
         </div>
-        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextClassName={"page-item"}
+          nextLinkClassName={"page-link"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link"}
+          disabledClassName={"disabled"}
+        />
       </div>
       <MovieList
         movies={data.results}

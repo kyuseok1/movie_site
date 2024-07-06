@@ -61,9 +61,7 @@ function Tvrating() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} TV {">"} 평점순
-          </span>
+          <span>TV {">"} 평점순</span>
           <TvGenreButton />
         </div>
       </div>

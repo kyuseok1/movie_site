@@ -66,7 +66,7 @@ const Home = () => {
             <div className="first-container">
               <div className="home">
                 <div className="home2">
-                  <h2> 최신 영화와 인기 TV 프로그램을 한눈에!</h2>
+                  <h2> 최신 영화와 인기 TV 프로그램을 한눈에 찾아보세요!</h2>
                 </div>
               </div>
             </div>

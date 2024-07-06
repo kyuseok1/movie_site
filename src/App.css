@@ -247,6 +247,7 @@ h1 {
 .container1 {
   width: 100%;
   height: 60px;
+  top: 50px;
   background-color: #aa5faa;
   color: white;
   position: absolute;
@@ -313,6 +314,46 @@ h1 {
   background-color: #007bff;
   color: white;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.page-item {
+  margin: 0 0.25rem;
+}
+
+.page-link {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
 
 .pagination3 {
   position: relative;
@@ -320,7 +361,7 @@ h1 {
   align-items: center;
   padding: 1rem 0;
   list-style: none;
-  top: 100px;
+  top: 140px;
   display: flex;
 }
 
@@ -920,7 +961,7 @@ h1 {
 }
 .movie-rank-container {
   position: relative;
-  top: 150px;
+  top: 200px;
   width: 75%;
   min-height: 100;
   margin: 0 auto;
@@ -1045,8 +1086,49 @@ h1 {
   width: 100%;
   height: 500px;
 }
+.movie-container4-inner .movie-castimg2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.movie-cast-img {
+  flex: 1 1 calc(20% - 10px);
+  margin: 5px;
+}
+.main-nav-content {
+  left: 150px;
+  position: relative;
+}
 @media screen and (min-width: 375px) and (max-width: 760px) {
+  .main-nav-content {
+    left: 0px;
+  }
+  .container1 {
+    top: 46px;
+  }
+  .pagination {
+    display: none;
+  }
+  .movie-rank-container {
+    width: 100%;
+  }
+  .movie-container3-inner {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+  }
+
+  .movie-container4-inner {
+    width: 90%;
+  }
+  .movie-cast-img {
+    flex: 1 1 calc(33.33% - 10px);
+  }
+  .movie-poster {
+    width: 40%;
+    height: 70%;
+  }
   .menu button {
     display: none;
   }

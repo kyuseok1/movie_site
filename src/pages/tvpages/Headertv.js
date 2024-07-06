@@ -60,9 +60,7 @@ function Headertv() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} TV {">"} 인기순
-          </span>
+          <span>TV {">"} 인기순</span>
           <TvGenreButton basePath="Tvgenre" />
         </div>
       </div>

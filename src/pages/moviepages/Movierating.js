@@ -78,9 +78,7 @@ function Movierating() {
       <Header />
       <div className="container1">
         <div className="inner">
-          <span>
-            Home {">"} Movie {">"} 평점순
-          </span>
+          <span>Movie {">"} 평점순</span>
           <GenreButtons basePath="MovieRatingGenre" />
         </div>
       </div>
