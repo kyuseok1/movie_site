@@ -315,15 +315,16 @@ h1 {
   color: white;
 }
 .pagination {
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  gap: 10px;
   list-style: none;
   border-radius: 0.25rem;
 }
 
 .page-item {
-  margin: 0 0.25rem;
+  text-align: center;
 }
 
 .page-link {
@@ -1096,20 +1097,18 @@ h1 {
   flex: 1 1 calc(20% - 10px);
   margin: 5px;
 }
-.main-nav-content {
-  left: 150px;
-  position: relative;
-}
+
 @media screen and (min-width: 375px) and (max-width: 760px) {
   .main-nav-content {
     left: 0px;
   }
   .container1 {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
     top: 46px;
   }
-  .pagination {
-    top: 30px;
-  }
+
   .movie-search-container {
     width: 100%;
   }

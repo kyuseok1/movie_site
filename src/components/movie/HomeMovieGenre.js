@@ -81,35 +81,36 @@ function HomeMovieGenre({ name, name2, genre }) {
           </h3>
         </div>
       </div>
-      <div className="home4-movie">
-        <div className="headerMovieGenre">
-          {products.slice(0, itemsPerPage).map((a, i) => (
-            <div className="movie-trend-img" key={a.id}>
-              <Link to={`/${name2}/${a.id}`}>
-                <img
-                  src={
-                    a.poster_path
-                      ? `https://image.tmdb.org/t/p/w200/${a.poster_path}`
-                      : "https://via.placeholder.com/200x300?text=No+Image"
-                  }
-                  alt={a.title || a.name}
-                />
-              </Link>
-            </div>
-          ))}
+      <div>
+        <div className="home4-movie">
+          <div className="headerMovieGenre">
+            {products.slice(0, itemsPerPage).map((a, i) => (
+              <div className="movie-trend-img" key={a.id}>
+                <Link to={`/${name2}/${a.id}`}>
+                  <img
+                    src={
+                      a.poster_path
+                        ? `https://image.tmdb.org/t/p/w200/${a.poster_path}`
+                        : "https://via.placeholder.com/200x300?text=No+Image"
+                    }
+                    alt={a.title || a.name}
+                  />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="pagination">
-        <button onClick={prevPage} disabled={page === 0}>
-          Previous
-        </button>
-        <button
-          onClick={nextPage}
-          disabled={(page + 1) * itemsPerPage >= totalProducts}
-        >
-          Next
-        </button>
+        <div className="pagination">
+          <button onClick={prevPage} disabled={page === 0}>
+            Previous
+          </button>
+          <button
+            onClick={nextPage}
+            disabled={(page + 1) * itemsPerPage >= totalProducts}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </>
   );
