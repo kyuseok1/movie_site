@@ -44,25 +44,15 @@ https://github.com/kyuseok1/movie-server
 <br>
 
 
-## 📈 Dependency  Version
+## 📈 React Version
 
-| Dependency                | Version  |
-| ------------------------- | -------- |
-| axios                     | ^1.7.2   |
-| chart.js                  | ^4.4.3   |
-| express                   | ^4.19.2  |
-| i18next                   | ^23.12.2 |
-| next                      | 14.2.5   |
-| next-i18next              | ^15.3.1  |
-| react                     | ^18      |
-| @types/node              | ^20      |
-| @types/react             | ^18      |
-| @types/react-dom         | ^18      |
-| @types/ws                | ^8.5.12  |
-| autoprefixer             | ^10.4.19 |
-| postcss                  | ^8.4.40  |
-| tailwindcss              | ^3.4.7   |
-| typescript               | ^5       |
+| dependencies       | version |
+| ------------------ | ------- |
+| react              | ^18.2.0 |
+| axios              | ^1.6.0  |
+| react-router-dom   | ^6.16.0 |
+| react-query        | ^3.39.3 |
+| redux              | ^4.2.1  |
 
 
 <br>
