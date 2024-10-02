@@ -54,6 +54,7 @@ https://github.com/kyuseok1/movie-server
 | react-query        | ^3.39.3 |
 | redux              | ^4.2.1  |
 
+
 <br>
 <br>
 <br>
