@@ -35,3 +35,9 @@
   height: 40px;
   color: #6c757d;
 }
+@media (max-width: 600px) {
+  .pagination li {
+    width: 1rem;
+    height: 1rem;
+  }
+}
