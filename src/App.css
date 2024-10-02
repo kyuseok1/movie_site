@@ -321,6 +321,7 @@ h1 {
   gap: 10px;
   list-style: none;
   border-radius: 0.25rem;
+  margin: 0px;
 }
 
 .page-item {
@@ -908,7 +909,7 @@ h1 {
   margin-right: 3px;
   font-size: 15px;
   width: 50px;
-  height: 20px;
+  height: 25px;
 }
 .movie-search-container input {
   margin-right: 10px;

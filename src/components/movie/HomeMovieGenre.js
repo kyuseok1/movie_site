@@ -98,18 +98,18 @@ function HomeMovieGenre({ name, name2, genre }) {
                 </Link>
               </div>
             ))}
+            <div className="pagination">
+              <button onClick={prevPage} disabled={page === 0}>
+                Previous
+              </button>
+              <button
+                onClick={nextPage}
+                disabled={(page + 1) * itemsPerPage >= totalProducts}
+              >
+                Next
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="pagination">
-          <button onClick={prevPage} disabled={page === 0}>
-            Previous
-          </button>
-          <button
-            onClick={nextPage}
-            disabled={(page + 1) * itemsPerPage >= totalProducts}
-          >
-            Next
-          </button>
         </div>
       </div>
     </>

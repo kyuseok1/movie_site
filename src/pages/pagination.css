@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   list-style: none;
-  padding-top: 10px;
+  height: 100px;
+  align-items: center;
 }
 
 .pagination li {
-  margin: 0 5px;
   width: 2rem;
   height: 2rem;
 }
