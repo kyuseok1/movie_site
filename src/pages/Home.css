@@ -106,7 +106,16 @@
   float: left;
   overflow: hidden;
 }
-
+@media screen and (max-width: 1024px) {
+  .headerMovieGenre,
+  .home4-movie {
+    height: 250px;
+  }
+  .trendday-container,
+  .home4 {
+    height: 250px;
+  }
+}
 @media screen and (min-width: 375px) and (max-width: 768px) {
   .home3,
   .home3-movie {

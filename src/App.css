@@ -247,18 +247,16 @@ h1 {
 .container1 {
   width: 100%;
   height: 60px;
-  top: 45px;
+  margin-top: 55px;
   background-color: #aa5faa;
   color: white;
-  position: absolute;
 }
 
 .inner {
-  padding-left: 20px;
   width: 70%;
   height: 60px;
   margin: auto;
-
+  gap: 70px;
   font-size: 15px;
   display: flex;
 }
@@ -269,11 +267,12 @@ h1 {
 .inner2 {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap; /* 작은 화면에서는 버튼이 아래로 내려가도록 설정 */
 }
+
 .inner2 button {
   background-color: #f8f9fa;
   color: #343a40;
@@ -284,11 +283,39 @@ h1 {
   font-size: 14px;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
+
+@media (max-width: 600px) {
+  .inner2,
+  .inner {
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .inner2 button,
+  .inner button {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner2,
+  .inner {
+    gap: 8px;
+  }
+
+  .inner2 button,
+  .inner button {
+    font-size: 13px;
+    padding: 4px 9px;
+  }
+}
+
 .genre-buttons-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
 }
@@ -1163,14 +1190,7 @@ h1 {
     padding: 2px 2px;
     border-radius: 10px;
   }
-  .inner2 button {
-    padding: 2px 2px;
-    border-radius: 10px;
-    font-size: 12px;
-  }
-  .inner2 {
-    gap: 5px;
-  }
+
   .inner {
     padding-left: 0px;
     margin: 0;
@@ -1190,6 +1210,9 @@ h1 {
   }
   .watching2-inner2 h1 {
     font-size: 15px;
+  }
+  .container1 {
+    height: 100px;
   }
 
   .gototop button {

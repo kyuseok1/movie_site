@@ -103,6 +103,7 @@
   .navbar-content {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .main-nav-content {
@@ -119,7 +120,7 @@
 }
 @media (max-width: 992px) {
   .fixed-top-header.expanded {
-    height: 400px;
+    height: 500px;
     background: black;
   }
 }
@@ -201,7 +202,6 @@
 .navbar-toggler:hover {
   background-color: #ffcc00;
   color: black;
-  transform: rotate(90deg);
 }
 
 .navbar-toggler-icon {
