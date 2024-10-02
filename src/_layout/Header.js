@@ -49,14 +49,12 @@ function Header() {
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <div className="navbar-content">
-              {/* 왼쪽에 Home */}
               <div className="left-nav">
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
               </div>
 
-              {/* 가운데 메뉴들 */}
               <div className="main-nav-content">
                 <Nav className="navbar-nav">
                   <NavDropdown title="TV" id="basic-nav-dropdown">
@@ -84,7 +82,6 @@ function Header() {
                 </Nav>
               </div>
 
-              {/* 오른쪽에 회원가입/로그인 */}
               <div className="right-nav">
                 <div className="auth-buttons">
                   {username ? (
