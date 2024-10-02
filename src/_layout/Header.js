@@ -49,11 +49,16 @@ function Header() {
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <div className="navbar-content">
+              {/* 왼쪽에 Home */}
+              <div className="left-nav">
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
+              </div>
+
+              {/* 가운데 메뉴들 */}
               <div className="main-nav-content">
                 <Nav className="navbar-nav">
-                  <Nav.Link as={Link} to="/">
-                    Home
-                  </Nav.Link>
                   <NavDropdown title="TV" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/Headertv">
                       인기순
@@ -78,24 +83,28 @@ function Header() {
                   </Nav.Link>
                 </Nav>
               </div>
-              <div className="auth-buttons">
-                {username ? (
-                  <>
-                    <Nav.Link disabled>Welcome, {username}</Nav.Link>
-                    <Button variant="outline-light" onClick={handleLogout}>
-                      Logout
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Button variant="outline-light" as={Link} to="/Register">
-                      회원가입
-                    </Button>
-                    <Button variant="outline-light" as={Link} to="/Login">
-                      로그인
-                    </Button>
-                  </>
-                )}
+
+              {/* 오른쪽에 회원가입/로그인 */}
+              <div className="right-nav">
+                <div className="auth-buttons">
+                  {username ? (
+                    <>
+                      <Nav.Link disabled>Welcome, {username}</Nav.Link>
+                      <Button variant="outline-light" onClick={handleLogout}>
+                        Logout
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button variant="outline-light" as={Link} to="/Register">
+                        회원가입
+                      </Button>
+                      <Button variant="outline-light" as={Link} to="/Login">
+                        로그인
+                      </Button>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </Navbar.Collapse>

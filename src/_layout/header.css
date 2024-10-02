@@ -12,38 +12,50 @@
   color: #ffffff;
 }
 
-@media (max-width: 992px) {
-  .fixed-top-header.expanded {
-    height: 400px;
-    background: black;
-  }
-}
-
 .navbar-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* 왼쪽, 가운데, 오른쪽으로 분리 */
   align-items: center;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .main-nav-content {
-  width: 85%;
   display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  flex-grow: 1;
 }
 
 .navbar-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  gap: 30px;
+  gap: 80px;
+}
+
+.left-nav {
+  flex: 1; /* 왼쪽에 공간을 차지하도록 설정 */
+}
+
+.right-nav {
+  flex: 1; /* 오른쪽에 공간을 차지하도록 설정 */
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .navbar-nav a:hover {
-  color: #ffffff;
+  color: #ffcc00;
 }
 
+.navbar-content a:hover {
+  color: #ffcc00;
+}
 .navbar-nav .nav-item {
   text-align: center;
 }
@@ -70,7 +82,7 @@
 .auth-buttons {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
   justify-content: flex-end;
 }
 
@@ -103,6 +115,12 @@
     width: 100%;
     flex-wrap: nowrap;
     gap: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .fixed-top-header.expanded {
+    height: 400px;
+    background: black;
   }
 }
 
